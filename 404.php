@@ -1,4 +1,5 @@
 <div class="ERROR">
-    <img src="images/warning.png">
+    <br></br>
+    <img src="images/warning.png" alt="Warning">
     <p>Page not found</p>
 </div>

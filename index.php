@@ -18,7 +18,7 @@
         <!-- The html validator did not like how we did this in class, so I resorted to the use of divs. -->
         <div class="head">
                 <div class="header">
-                        <img src="images/banner.jpg" id="bannerjpg"><!-- Image source: https://pixabay.com/en/banner-header-binary-null-one-904887/ -->
+                        <img src="images/banner.jpg" id="bannerjpg" alt="Site Banner"><!-- Image source: https://pixabay.com/en/banner-header-binary-null-one-904887/ -->
                                 Design Patterns
                 </div>
                 <div class="navigation_menu">

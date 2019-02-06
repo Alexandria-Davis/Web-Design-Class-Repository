@@ -1,7 +1,7 @@
 body {
         background-color:#0F0F0F;
 }
-a {
+.navbar .navbox a {
     color:black;
     font-weight:bold;
     text-decoration:none;
@@ -13,9 +13,6 @@ a {
 .head {
     padding:10px;
     background-color:grey;
-}
-.header {
-    
 }
 .navbox {
     padding:5px;
@@ -43,4 +40,22 @@ a {
 .footer {
     color:#888888;
     text-align:right;
+}
+.text {
+    padding:5px;
+    overflow:auto;
+}
+.text img {
+    float:left;
+}
+#singleton {
+    width:300px;
+}
+#nfa {
+    width:50%;
+    margin:10px;
+}
+.title {
+    font-size: 20px;
+    font-weight:bold;
 }
