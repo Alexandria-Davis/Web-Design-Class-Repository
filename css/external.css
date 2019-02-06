@@ -6,6 +6,9 @@ body {
     font-weight:bold;
     text-decoration:none;
 }
+.text a {
+    text-decoration:none;
+}
 .body {
     margin:20px 50px 20px 50px;
     background-color: #F0F0F0;
