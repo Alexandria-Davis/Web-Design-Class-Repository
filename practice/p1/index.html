@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> The Seasons </title>
+        <style type="text/css">
+        body {
+            background:black;
+            text-align: center;
+            color:white;
+        }
+        title-disp {
+            color:yellow;
+            font-family: Monospace;
+            font-size: 40px;
+            text-align: center;
+            width: 100%;
+        }
+            content {
+                display:flex;
+                justify-content:center;
+            }
+            column {
+                width: 400px;
+            }
+            season{
+                display:block;
+                width:250px;
+            }
+            caption {
+                color: red;
+                font-family: Monospace;
+            }
+            .topleft {
+                border-top-left-radius: 50px;
+                
+            }
+            .topright {
+                border-top-right-radius: 50px; 
+            }
+            .bottomright {
+                border-bottom-right-radius: 50px; 
+            }
+            .bottomleft {
+                border-bottom-left-radius: 50px; 
+            }
+
+        </style>
+    </head>
+    <body>
+        <title-disp>The Seasons</title-disp>
+        <content>
+    <column>
+        <season>
+            <img src="seasons/img/spring.png" class="topleft"></img>
+            <caption> Spring </caption>
+        </season>
+        <hr> 
+        <season>
+            <img class="bottomleft" src="seasons/img/fall.png"></img>
+            <caption>Fall</caption>
+        </season>
+        </disp>
+    </column>
+    <column>
+        <disp>
+        <season>
+            <img class="topright" src="seasons/img/summer.png"></img>
+            <caption>Summer</caption>
+        </season>
+        <hr> 
+        <season>
+            <img class="bottomright" src="seasons/img/winter.jpg" height=233px ></img>
+            <caption>Winter</caption>
+        </season>
+        </disp>
+        
+    </column>
+    </content>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+body{
+    background-color:white;
+    margin: 0;
+}
+div {
+    padding-bottom: 1em;
+    padding-top:1em;
+}
+.flexed{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.content {
+    padding-left: 3em;
+    padding-right: 1em;
+}
+.header
+{
+    font-size: 2em;
+    background-color: darkblue;
+    color:white;
+    margin-left: 0;
+    padding-left: 1em;
+    max-width: 100%;
+}
+.minor_head {
+    font-size:1.5em;
+    font-weight: bold;
+}
+.mp_head{
+    font-weight: bold;
+}
