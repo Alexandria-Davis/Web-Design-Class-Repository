@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> </title>
+        <meta charset="utf-8">
+        <script
+    			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+    			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    			  crossorigin="anonymous"></script>
+		          <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    </head>
+    <body>
+        
+        <div id="box" style="width:100px; height:100px; background:red;position:absolute)"></div>
+        
+        
+        
+        <h2>Weekdays:</h2>
+        <h3>Monday</h3>
+        <h3>Tuesday</h3>
+        <h3>Wednesday</h3>
+        <h3>Thursday</h3>
+        <h3>Friday</h3>
+        
+        
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var cssleft = $("#box").css("left");
+                $("#box").click(function(){
+                    $("#box").animate({ left: '250px' }, 2000);
+                    setTimeout(function() {
+                        $("#box").animate({ left: cssleft}, 2000)
+                    }, 2000);
+                    
+                });
+                
+                
+                
+                $("h2").click( function() {
+                   $("h2").css("color","red"); 
+                   $("h3:first").html("Today is Monday");
+                   $("h3:even").css("background-color","grey");
+                   $("h3:even").attr("class","even")
+                   $("h3:odd").css("background-color","black");
+                   $("h3:odd").css("color","white");
+                   $("h3:odd").attr("class","odd");
+               });
+               $("h3").click ( function() {
+                   $(this).css("border","solid 2px");
+               });
+            });
+        </script>
+        
+        <script type="text/javascript">
+            $("document").ready(function() {
+                console.log("Document ready");
+            });
+        </script>
+    </body>
+</html>

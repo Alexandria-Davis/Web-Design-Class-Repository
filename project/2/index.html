@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+        <script type="text/javascript" src="js/process.js"></script>
+        <script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/css.css" type="text/css" />
+    </head>
+    <body>
+        <form>
+            <field>
+                <instruction>Enter your name</instruction>
+                <label for="Name">Name:</label>
+                <input type="text" name="Name" placeholder="Lorium Ipsum" id = "namefield"/> 
+            </field>
+            <field>
+                <instruction>Select your favorite color</instruction>
+                <input type="color" id="colorfield" placeholder = blue />
+            </field>
+            <field>
+                <instruction>Set your age </instruction>
+                <label for="age">How many years old are you?</label>
+                <input type="number" name="age" placeholder="3" id = "agefield"/> 
+            </field>
+            <field>
+                <instruction>Select all desired pets</instruction>
+                <answer>
+                <input type="checkbox" id="petcat" name="petbox"/>
+                <label for="petcat">cat</label>
+                </answer>
+                <answer>
+                    <input type="checkbox" id="petdog" name="petbox"/>
+                    <label for="petdog">dog</label>
+                </answer>
+                <answer>
+                <input type="checkbox" id="pethamster" name="petbox"/>
+                <label for="pethamster">hamster</label>
+                </answer>
+                <answer>
+                <input type="checkbox" id="petfish" name="petbox"/>
+                <label for="petfish">fish</label>
+                </answer>
+            </field>
+            <field>
+                <instruction>Which pets are you alergic to?</instruction>
+                <label for="Name">Alergies </label><input type="text" name="Name" placeholder="None" id = "alergyfield"/> 
+            </field>
+            <field>
+            <label for="colorfield">Do you prefer small dogs or large ones?</label>
+            <answer>
+            <input type="radio" id="smalldog" />
+            <label for="smalldog">small ones</label>
+            </answer>
+            <answer>
+            <input type="radio" id="smalldog" />
+            <label for="largedog">large ones</label>
+            </answer>
+            <answer>
+            <input type="radio" id="nodog" />
+            <label for="smalldog">I don't like dogs</label>
+            </answer>
+            <answer>
+            <input type="radio" id="alldog" />
+            <label for="smalldog">I like all dogs</label>
+            </answer>
+            </field>
+            <button type="button" id="submit">Submit</button>
+            <button type="button" id="reset">Reset</button>
+        </form>
+    </body>
+</html>

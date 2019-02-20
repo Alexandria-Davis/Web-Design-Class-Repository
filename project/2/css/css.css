@@ -1,0 +1,17 @@
+field{
+    display:block;
+    margin-left:2em;
+    margin-bottom:1em;
+}
+label {
+    padding-right:1em;
+}
+answer {
+    display:block;
+}
+instruction{
+    font-size:2em;
+    background:grey;
+    display:block;
+    margin-bottom:1em;
+}

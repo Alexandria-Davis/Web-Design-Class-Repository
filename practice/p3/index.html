@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+    </head>
+    <body>
+    <spinner></spinner>
+
+    <script type="text/javascript">
+        
+    
+        function spin() {
+            var x = [0,0,0];
+            for (var i = 0; i < 3; i++)
+            {
+                x[i] = Math.floor(Math.random()*3)+1;
+            }
+            return x;
+        }
+    
+        function jackpot() {
+        var audio = new Audio('audio/jackpot.m4a');
+        audio.play();
+        }
+    </script>
+    </body>
+</html>
