@@ -46,29 +46,30 @@
             </field>
             <field>
                 <instruction>Which pets are you alergic to?</instruction>
-                <label for="Name">Alergies </label><input type="text" name="Name" placeholder="None" id = "alergyfield"/> 
+                <label for="Name" value="Alergies"><input type="text" name="Name" placeholder="None" id = "alergyfield"/> 
             </field>
             <field>
-            <label for="colorfield">Do you prefer small dogs or large ones?</label>
+            <instruction>Do you prefer small dogs or large ones?</instruction>
             <answer>
-            <input type="radio" id="smalldog" />
+            <input type="radio" id="smalldog" name="smallorlargedog"/>
             <label for="smalldog">small ones</label>
             </answer>
             <answer>
-            <input type="radio" id="smalldog" />
+            <input type="radio" id="smalldog" name="smallorlargedog"/>
             <label for="largedog">large ones</label>
             </answer>
             <answer>
-            <input type="radio" id="nodog" />
+            <input type="radio" id="nodog" name="smallorlargedog"/>
             <label for="smalldog">I don't like dogs</label>
             </answer>
             <answer>
-            <input type="radio" id="alldog" />
+            <input type="radio" id="alldog" name="smallorlargedog"/>
             <label for="smalldog">I like all dogs</label>
             </answer>
             </field>
+            <field>
             <button type="button" id="submit">Submit</button>
-            <button type="button" id="reset">Reset</button>
+            </field>
         </form>
     </body>
 </html>

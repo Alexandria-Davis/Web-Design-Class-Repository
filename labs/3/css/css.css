@@ -4,3 +4,22 @@ question{
 answer {
     display:block;
 }
+field{
+    display:block;
+    margin-left:2em;
+    margin-bottom:1em;
+}
+label {
+    padding-right:1em;
+    font-weight:4px;
+    color:white;
+}
+answer {
+    display:block;
+}
+body {
+    background:beige;
+}
+button {
+    background-color:lightblue;
+}

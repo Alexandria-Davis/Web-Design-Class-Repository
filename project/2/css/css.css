@@ -5,13 +5,22 @@ field{
 }
 label {
     padding-right:1em;
+    font-weight:4px;
+    color:white;
 }
 answer {
     display:block;
 }
 instruction{
     font-size:2em;
-    background:grey;
+    background:black;
+    color:white;
     display:block;
     margin-bottom:1em;
+}
+body {
+    background:darkblue;
+}
+button {
+    background-color:lightblue;
 }
