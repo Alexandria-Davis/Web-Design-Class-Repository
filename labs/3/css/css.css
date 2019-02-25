@@ -1,8 +1,12 @@
 question{
-    display:inline;
+    display:block;
 }
 qlabel{
     display:block;
+    padding:1em;
+    margin:1em;
+    background-color: white;
+    
 }
 answer {
     display:block;
@@ -24,4 +28,7 @@ body {
 }
 button {
     background-color:lightblue;
+}
+point_score {
+    display:block;
 }
