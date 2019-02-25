@@ -32,3 +32,14 @@ button {
 point_score {
     display:block;
 }
+.Yay {
+    background-color:green;
+}
+point_value{
+    display:block;
+    background-color:inherit;
+}
+reward {
+    display:block;
+    background-color: inherit
+}

@@ -15,6 +15,7 @@
         </quiz>
         <button type="button" id="submit">submit</button> <button type="button">clear</button>
     </form>
+    <score></score>
     <script type="text/javascript" src="js/quiz.js"></script>
     </body>
 </html>

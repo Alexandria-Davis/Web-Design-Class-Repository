@@ -24,7 +24,8 @@ questions = [  /*global questions*/
         Type: "radio",
         Question: "This quiz was created and delivered in Javascript. What is NOT a consequence of this?",
         correctAnswer: ["It must always have access to the node.js server to work"],
-        incorrectAnswers: ["Someone who didn't want to actually take the quiz could search the code for the answer", "The javascript allows the page to change without reloading", "Tools such as nojs will often break the site unless the source is whitelisted", "Data can be systematically added to the page without extra effort"]
+        incorrectAnswers: ["Someone who didn't want to actually take the quiz could search the code for the answer", "The javascript allows the page to change without reloading", "Tools such as nojs will often break the site unless the source is whitelisted", "Data can be systematically added to the page without extra effort"],
+        Points:1
     },
         {
             Type: "checkbox",
@@ -110,7 +111,7 @@ function submits() {
     var qpoints;
     for (var i = 0; i < questions.length; i++)
     {
-        max_points+= questions[i].points;
+        max_points+= questions[i].Points;
         qpoints = 0;
         var temp = $("input[name='question"+i+"']:checked");
         for (var j = 0; j < temp.length; j++) {
@@ -124,9 +125,21 @@ function submits() {
             document.getElementById(`points_for_${i}`).innerHTML = `${qpoints} out of ${questions[i].Points}`
             points += qpoints
         }
+        var score = document.querySelector("score");
+        score.innerHTML = "";
+        var score_value = document.createElement("point_value");
+        score_value.innerHTML = `You scored ${points} out of ${max_points}. Total score: ${(points/max_points).toFixed(2)}%`;
+        score.appendChild(score_value)
         
+        if (points/max_points >= .9)
+        {
+            var yay = document.createElement("Reward");
+            yay.innerHTML = "YOU PASSED WITH FLYING COLORS";
+            score.appendChild(yay);
+            score.setAttribute("class","Yay")
+        }
         //var form = document.querySelector("quiz");
-        questions[i].correctAnswer
+        
     }
 }
 
