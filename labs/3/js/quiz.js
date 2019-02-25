@@ -37,25 +37,30 @@ var questions = [
     }
     ];
 
-var form = document.querySelector("quiz");
+
 var submitButton = document.querySelector("#submit");
-submitButton.addEventListener("click",submits);
-generate_quiz(questions)
+submitButton.addEventListener("click",function(){submits(questions)});
+generate_quiz(questions);
 
 function generate_quiz(questions) {
-    var form = document.querySelector("quiz")
+    var form = document.querySelector("quiz");
     for (var i = 0; i < questions.length; i++)
     {   
+        var qlabel = document.createElement("qlabel");
+        var qnumber = document.createElement("qnumber");
+        qnumber.innerHTML = i;
+        qlabel.appendChild(qnumber);
+        form.appendChild(qlabel);
+        
         var question = document.createElement("question");
         question.setAttribute("qustionNumber",i);
         
         var actual_question = document.createElement("Problem");
         actual_question.innerHTML = questions[i].Question;
-        question.appendChild(actual_question)
+        question.appendChild(actual_question);
         
         var allAnswers = questions[i].correctAnswer.concat(questions[i].incorrectAnswers);
         shuffleArray(allAnswers);
-        console.log(allAnswers)
         for (var j = 0; j < allAnswers.length; j++)
         {
             var answer = document.createElement("answer");
@@ -73,7 +78,7 @@ function generate_quiz(questions) {
             answer.appendChild(answer_label);
             question.appendChild(answer);
         }
-        form.appendChild(question)
+        form.appendChild(question);
     }
 }
 function shuffleArray(array) {
@@ -84,8 +89,20 @@ function shuffleArray(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
-function submits() {
+function submits(questions) {
     
+    for (var i = 0; i < questions.length; i++)
+    {
+        var temp = $("input[name='question"+i+"']:checked");
+        for (i = 0; i < temp.length; i++) {
+            var selected = console.log(temp[i].id);
+            var selection = document.querySelector("label[for='"+selected+"']").innerHTML;
+            console.log(selection);
+        }
+        
+        //var form = document.querySelector("quiz");
+        questions[i].correctAnswer
+    }
 }
 
 /*

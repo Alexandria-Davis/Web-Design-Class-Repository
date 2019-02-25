@@ -1,4 +1,7 @@
 question{
+    display:inline;
+}
+qlabel{
     display:block;
 }
 answer {
@@ -12,7 +15,6 @@ field{
 label {
     padding-right:1em;
     font-weight:4px;
-    color:white;
 }
 answer {
     display:block;
