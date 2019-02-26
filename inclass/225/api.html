@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+    	getData()
+    /*global $*/
+  	function getData() {        
+      $.ajax({
+          type: "get",
+          url: "https://homework1-alexandriadavis.c9users.io/inclass/225/api.php",
+          dataType: "json",
+          data: {
+
+          },
+          success: function(data,status) {
+          },
+          complete: function(data,status) { //optional, used for debugging purposes
+            console.log(status);
+          }
+         });
+    }
+    
+    </script>
+</body>
+
+</html>
