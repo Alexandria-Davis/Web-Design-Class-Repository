@@ -1,4 +1,30 @@
-label
+.field_div
 {
     margin-bottom: 1em;
+}
+input
+{
+    margin-left: 1em;
+}
+select
+{
+    margin-left: 1em;
+}
+#ZipError
+{
+    color:red;
+    font-weight: bolder;
+    margin-left: 2em;
+}
+#passErrorlist
+{
+        color:red;
+    font-weight: bolder;
+    margin-left: 2em;
+}
+#UNameError
+{
+        color:red;
+    font-weight: bolder;
+    margin-left: 2em;
 }

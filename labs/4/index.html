@@ -14,21 +14,22 @@
   <form>
     <fieldset>
       <legend>Sign Up</legend>
-      <div><label>First Name:</label><input type="text" id="FNameField"></div>
-      <div><label>Last Name:</label><input type="text" id="LNameField"></div>
-      <div><label>Email:</label><input type="text" id="EmailField"></div>
-      <div><label>Phone Number:</label><input type="text" id="PhoneNumField"></div>
-      <div><label>Zip Code:</label><input type="text" id="ZipField"><span id="ZipError"></span></div>
+      <div class="field_div"><label>First Name:</label><input type="text" id="FNameField"></div>
+      <div class="field_div"><label>Last Name:</label><input type="text" id="LNameField"></div>
+      <div class="field_div"><label>Email:</label><input type="text" id="EmailField"></div>
+      <div class="field_div"><label>Phone Number:</label><input type="text" id="PhoneNumField"></div>
+      <div class="field_div"><label>Zip Code:</label><input type="text" id="ZipField"><span id="ZipError"></span></div>
       
-      <div><label>City:</label> <input type='text' id='CityField' disabled="true" value="test"></inpupt></div>
-      <div><label>Latitude:</label><input type='text' id='LatField' disabled="true" value="test"></input></div>
-      <div><label>Longitude:</label><input type="text" id="LongField" disabled></input></div>
-      <div><label>State:</label><input type="text"></div>
-      <div><label>Select a County:</label><select></select></div>
+      <div class="field_div"><label>City:</label> <input type='text' id='CityField' disabled="true" value="test"></inpupt></div>
+      <div class="field_div"><label>Latitude:</label><input type='text' id='LatField' disabled="true" value="test"></input></div>
+      <div class="field_div"><label>Longitude:</label><input type="text" id="LongField" disabled></input></div>
+      <div class="field_div"><label>State:</label><input type="text" id="StateField"></div>
+      <div class="field_div"><label>Select a County:</label><select id="CountyDrop"></select></div>
       
-      <div><label>Desired Username:</label><input type="text" id="UNameField"></div>
-      <div><label>Password:</label><input type="password" id="PField"></div>
-      <div><label>Type Password Again:</label><input type="password" id="PField2"></div>
+      <div class="field_div"><label>Desired Username:</label><input type="text" id="UNameField"><span id="UNameError"></span></div>
+      <div class="field_div"><label>Password:</label><input type="password" id="PField"></div>
+      <div class="field_div"><label>Type Password Again:</label><input type="password" id="PField2"></div>
+      <div id="PassError"></div>
       <div><button type="button" value="Sign up!"></div> <!--Sorry, but for security reasons, I would prefer button with type button-->
     </fieldset>
   </form>
