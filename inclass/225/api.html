@@ -7,17 +7,20 @@
 
 <body>
     <script type="text/javascript">
-    	getData()
+    $(document).ready(function() { console.log("getting data"); getData();})
     /*global $*/
   	function getData() {        
       $.ajax({
           type: "get",
-          url: "https://homework1-alexandriadavis.c9users.io/inclass/225/api.php",
+          url: "/inclass/225/api.php",
           dataType: "json",
           data: {
 
           },
           success: function(data,status) {
+              var add_to = document.querySelector("body");
+              var data_container = document.createElement("table");
+              add_to.appendChild(data_container);
           },
           complete: function(data,status) { //optional, used for debugging purposes
             console.log(status);

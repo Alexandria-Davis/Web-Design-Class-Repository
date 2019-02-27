@@ -1,0 +1,41 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>AJAX: Sign Up Page</title>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+</head>
+
+<body id="dummybodyid">
+  <h1> Sign Up Form </h1>
+
+  <form>
+    <fieldset>
+      <legend>Sign Up</legend>
+      <div><label>First Name:</label><input type="text" id="FNameField"></div>
+      <div><label>Last Name:</label><input type="text" id="LNameField"></div>
+      <div><label>Email:</label><input type="text" id="EmailField"></div>
+      <div><label>Phone Number:</label><input type="text" id="PhoneNumField"></div>
+      <div><label>Zip Code:</label><input type="text" id="ZipField"><span id="ZipError"></span></div>
+      
+      <div><label>City:</label> <input type='text' id='CityField' disabled="true" value="test"></inpupt></div>
+      <div><label>Latitude:</label><input type='text' id='LatField' disabled="true" value="test"></input></div>
+      <div><label>Longitude:</label><input type="text" id="LongField" disabled></input></div>
+      <div><label>State:</label><input type="text"></div>
+      <div><label>Select a County:</label><select></select></div>
+      
+      <div><label>Desired Username:</label><input type="text" id="UNameField"></div>
+      <div><label>Password:</label><input type="password" id="PField"></div>
+      <div><label>Type Password Again:</label><input type="password" id="PField2"></div>
+      <div><button type="button" value="Sign up!"></div> <!--Sorry, but for security reasons, I would prefer button with type button-->
+    </fieldset>
+  </form>
+
+    <script type="text/javascript" src="js.js"></script>
+    <link rel="stylesheet" href="css.css" type="text/css" />
+
+</body>
+
+</html>
