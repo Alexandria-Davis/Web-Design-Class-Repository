@@ -16,15 +16,21 @@ select
     font-weight: bolder;
     margin-left: 2em;
 }
-#passErrorlist
+#PassError
 {
         color:red;
     font-weight: bolder;
     margin-left: 2em;
 }
-#UNameError
+#UNameError .error
 {
         color:red;
+    font-weight: bolder;
+    margin-left: 2em;
+}
+#UNameError .success
+{
+        color:green;
     font-weight: bolder;
     margin-left: 2em;
 }

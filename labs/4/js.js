@@ -9,22 +9,28 @@ document.querySelector("#ZipField").addEventListener("change", findzip);
 document.querySelector("#UNameField").addEventListener("change", checkUname)
 document.querySelector("#PField").addEventListener("change",checkPass)
 document.querySelector("#PField2").addEventListener("change",checkPass)
+
+findzip();
+
 function checkUname() {
     var uname = document.querySelector('#UNameField').value;
     var taken = [ 'Username','username','Admin','admin','alexandria','mine','owner'];
     if ($.inArray(uname,taken) == 1)
     {
         document.querySelector("#UNameError").innerHTML = "This username is taken";
+        document.querySelector("#UNameError").setAttribute("class","error");
     }
     else
     {
-        document.querySelector("#UNameError").innerHTML = "";
+        document.querySelector("#UNameError").innerHTML = "This username is free";
+        document.querySelector("#UNameError").setAttribute("class","success");
     }
 }
 function checkPass() {
     var pass = document.querySelector("#PField").value;
     var pass2 = document.querySelector("#PField2").value;
     var passError = document.createElement("ul");
+    document.querySelector("#PassError").innerHTML="";
     document.querySelector("#PassError").appendChild(passError);
     if (pass != pass2)
     {
