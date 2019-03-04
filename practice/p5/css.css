@@ -1,0 +1,13 @@
+.buttonarea
+{
+    display:inline-block;
+    text-align:right;
+}
+.fullbody
+{
+    width: 100%;
+}
+.limiter
+{
+    width:440px;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Practice 5: Like/Dislike Video App</title>
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <link rel="stylesheet" href="css.css" type="text/css" />
+</head>
+
+<body>
+  <div class="limiter">
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" width="420" height="315"></iframe>
+    <table class="fullbody">
+      <tr>
+        <td>
+          <div class="showcomment">
+            <button type="button" id="showcomments">Show Comments</button>
+          </div>
+        </td>
+        <td class="buttonarea">
+          <div>
+            <table>
+              <tr>
+                <td>
+                  <button id="like" onclick="function = {ajaxCall('like')}"><img src="img/like.png" alt="Like button" width="35" /></button>
+                  <button id="cancelLike" onclick="function = {ajaxCall('cancelLike')}"> <img src="img/cancel_like.png" alt=" cancel like" width="35"/></button>
+                </td>
+                <td>
+                  <button id="dislike" onclick="function = {ajaxCall('dislike')}"><img src="img/dislike.png" alt="Dislike button" width="35" /></button>
+                  <button id="cancelDislike" onclick="function = {ajaxCall('cancelDislike')}"> <img src="img/cancel_dislike.png" alt=" cancel dislike" width="35"/></button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span id="likes"></span>
+                </td>
+                <td>
+                  <span id="dislikes"></span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <comment></comment>
+
+
+
+
+</body>
+
+<script>
+  //This AJAX call returns a number of "likes" and "dislikes"
+  //Enter a YouTube video id for "data".
+  /*global $ */
+  $.ajax({
+    type: "get",
+    url: "https://cst336.herokuapp.com/projects/api/videoLikesAPI.php",
+    dataType: "json",
+    data: {
+      "videoId": "dQw4w9WgXcQ"
+    }, //   <----AS THE VALUE, ENTER THE YOUTUBE VIDEO ID
+
+    success: function(data, status) {
+      $("#likes").html(data.likes);
+      $("#dislikes").html(data.dislikes);
+    },
+    complete: function(data, status) {
+      //alert(status);
+    }
+  });
+  
+</script>
+<script src="js/js.js"></script>
+</html>
