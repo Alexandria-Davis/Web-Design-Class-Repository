@@ -1,0 +1,22 @@
+table
+{
+    border: thin black solid;
+    width:100%;
+    max-width: 40em;
+}
+td
+{
+    border: thin black solid;
+}
+tr
+{
+    border: thin black solid;
+}
+th
+{
+    border: thin black solid;
+}
+.discountarea
+{
+    margin-top:2em;
+}

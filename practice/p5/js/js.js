@@ -1,4 +1,5 @@
 /*global $*/
+
 function dosomething(action)
 {
   $.ajax({
@@ -63,18 +64,26 @@ function dosomething2(action)
       $("#likes").html("<img src='http://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif'>");
       $("#likes").hide();
       $("#cancelLike").show();
+      dosomething(action);
     }
     if (action == "cancel_like") {
       $("#cancelLike").hide();
       $("#likes").show();
+      dosomething(action);
     }
     if (action == "dislike"){
       $("#likes").hide();
       $("#cancelLike").show();
+      dosomething(action);
     }
     if (action == "cancel_dislike") {
       $("#cancelDislike").hide();
       $("#likes").show();
+      dosomething(action);
+    }
+    else (action == "showcomments")
+    {
+        dosomething2(action);
     }
   }
   
