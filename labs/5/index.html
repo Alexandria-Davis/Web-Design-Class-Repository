@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>AJAX: Sign Up Page</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css.css" type="text/css" />
+</head>
+
+<body>
+    <h1> Sign Up Form </h1>
+
+    <form>
+        <fieldset>
+            <legend>Sign Up</legend>
+            <div class="field_div"><label>First Name:</label><input type="text" id="FNameField"></div>
+            <div class="field_div"><label>Last Name:</label><input type="text" id="LNameField"></div>
+            <div class="field_div"><label>Email:</label><input type="text" id="EmailField"></div>
+            <div class="field_div"><label>Phone Number:</label><input type="text" id="PhoneNumField"></div>
+            <div class="field_div"><label>Zip Code:</label><input type="text" id="ZipField"><span id="ZipError"></span></div>
+
+            <div class="field_div"><label>City:</label> <input type='text' id='CityField' disabled="true" value="test"></inpupt>
+            </div>
+            <div class="field_div"><label>Latitude:</label><input type='text' id='LatField' disabled="true" value="test"></input>
+            </div>
+            <div class="field_div"><label>Longitude:</label><input type="text" id="LongField" disabled></input>
+            </div>
+            <div class="field_div"><label>State:</label><input type="text" id="StateField"></div>
+            <div class="field_div"><label>Select a County:</label><select id="CountyDrop"></select></div>
+
+            <div class="field_div"><label>Desired Username:</label><input type="text" id="UNameField"><span id="UNameError"></span></div>
+            <div class="field_div"><label>Password:</label><input type="password" id="PField"></div>
+            <div class="field_div"><label>Type Password Again:</label><input type="password" id="PField2"></div>
+            <div id="PassError"></div>
+            <div><button type="button" value="Sign up!">Sign up!</div> <!--Sorry, but for security reasons, I would prefer button with type button-->
+    </fieldset>
+  </form>
+  <script type="text/javascript" src="js.js"></script>
+    <script type="text/javascript" src="locate.js"></script>
+    </body>
+</html>
