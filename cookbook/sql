@@ -1,0 +1,22 @@
+SELECT 
+    column as result_column_name, 
+    column, 
+    table.column
+FROM
+        table1 a
+    JOIN_TYPE (inner, left outer, right outer)
+        table2 b
+        ON a.column = b.column
+WHERE
+        CONDITION
+    and
+        CONDITION
+HAVING
+    Aggregated condition
+    
+-----------------------
+count(1) to count all rows
+
+avg(), count(), min(), max(), sum()
+----------------------------
+ALL or DISTINCT

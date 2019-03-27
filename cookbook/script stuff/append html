@@ -1,0 +1,7 @@
+$("#target").append(`<explination>string for plain html</explination>`)
+
+$("#target").append(<div>) //to straight up create an element
+
+$("target").html(`WARNING: THIS WILL REPLASE EVERYTHING`)
+
+set attributes with .attr("tag","value")

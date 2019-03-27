@@ -1,0 +1,5 @@
+PHP:
+array.push($var,item)
+array[] = item
+Javascript:
+array.push(entity)
