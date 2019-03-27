@@ -54,6 +54,7 @@
         </table>
         <div class="discountarea">
             <label for="promocode">Promo Code</label><input type="text" id="promoBox" name="promocode"/>
+            <div class="codeError"></div>
         </div>
     </body>
     <script type="text/javascript" src="product.js"></script>
@@ -69,9 +70,8 @@
                 data: { "promo": $("#promoBox").val() },  
                 
                 success: function(data,status) {
-                    $(".discount").html(data);
-                  console.log(data);
-                  $updatePrice;
+                    getDiscount()
+                  updatePrice();
                   
                 },
                 complete: function(data,status) { 

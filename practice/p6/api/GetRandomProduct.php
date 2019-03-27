@@ -15,7 +15,7 @@ function connectDB(){
     return $pdo;
     };
     function getproduct($pdo){
-        $query = "select * from mp_product";
+        $query = "select productName, productPrice from mp_product";
         $statement = $pdo->prepare($query);
         $statement->execute();
         $records = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -59,18 +59,7 @@ function connectDB(){
         header("Content-Type: application/json");
 
     $pdo = connectDB();
-    $productname = "test";
     $products = getproduct($pdo);
-//$products = array(
-//['product'=>"Microfiber Beach Towel", 'price'=>40, 'qty'=>2],
-//['product'=>"Flip-flop Sandals", 'price'=>30, 'qty'=>5],
-//['product'=>"Sunscreen 80SPF", 'price'=>25, 'qty'=>3],
-//['product'=>"Plastic Flying Disc", 'price'=>15, 'qty'=>4],
-//['product'=>"Beach Umbrella", 'price'=>7, 'productId' => 5, 'qty'=>1],
-//);
-
-//var_dump( $products );
-//var_dump( $products[1])
 $randnum = rand(0,sizeof($products));
 $results =  listproduct($products[$randnum]);
 

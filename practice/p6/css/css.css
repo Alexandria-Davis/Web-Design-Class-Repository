@@ -20,3 +20,6 @@ th
 {
     margin-top:2em;
 }
+.codeError {
+    background-color: red;
+}

@@ -1,28 +1,56 @@
 <?php
+function connectDB(){
+    $host = "localhost";
+    $dbname = "midterm1";
+    $user ="alexandriadavis";
+    $pass = "";
+    
+    $dsn="mysql:host={$host};dbname={$dbname};";
+    
+    $opt = [
+        ];
+    
+    $pdo = new PDO($dsn,$user,$pass,$opt);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    return $pdo;
+    }
+    
+function getpromo($pdo, $promo){
+        $query = "select discount, expirationDate from mp_codes where promoCode = '" . $promo . "';"; //error when trying to escape string
+        $statement = $pdo->prepare($query);
+        $statement->execute();
+        $records = $statement->fetch(PDO::FETCH_ASSOC);
+        return $records;
+    };
+    
+    
+?>
+
+
+<?php
+/*
 $getpromo = function() {
-$promos = array(
+  $promos = array(
     "getFifty" => 50,
     "halfPrice" => 50,
    "sand30" => 30, 
    "spring30" => 30,
    "beach" => 20,
    "sunny" => 20
-    
     );
-
-//$promos[] = "halfPrice";
-//$promos[] = "Fr33AF";
-//array_push($promos, "noSHIPcostYO", "quarterPrice", "WEpayYOU");
-$promo = array();
-$code = $_GET['promo'];
-if($promos[$code]){
+  //$promos[] = "halfPrice";
+  //$promos[] = "Fr33AF";
+  //array_push($promos, "noSHIPcostYO", "quarterPrice", "WEpayYOU");
+  $promo = array();
+  $code = $_GET['promo'];
+  if($promos[$code]){
     return $promos[$code];
     }
-else {
+  else {
     return 0;
-}
+  }
 };
-
+*/
 ?>
 <?php
   session_start();
@@ -43,7 +71,8 @@ else {
         header("Content-Type: application/json");
 
         // TODO: do stuff to get the $results which is an associative array
-        $results =  $getpromo();
+        $dbo = connectDB();
+        $results =  getpromo($dbo,$_GET['promo']);
 
         // Sending back down as JSON
         echo json_encode($results);

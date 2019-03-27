@@ -1,19 +1,45 @@
 
 /*global $*/
+var getDiscount = function($data)
+{
+    if ($data)
+    {
+        if ($data["discount"])
+        {
+            var today = new Date();
+            var end = new Date($data['expirationDate']);
+            if (today < end)
+            {            
+                $(".discount").html(`${$data["discount"]}`);
+                
+                $(".codeError").html("")
+            }
+            else
+            {
+                $(".discount").html("0");
+                $(".codeError").html(`Code expired on ${$data['expirationDate']}`);
+            }
+        }
+    }
+    else
+    {
+        $(".discount").html("0");
+        $(".codeError").html("Code not found");
+    }
+};
 var updatePrice = function()
 {
     var price =  $(".unit_price").html();
     var quantity = $(".quantity").html();
     
     $(".utotal").html(  price*quantity  );
-    $(".dtotal").html($(".discount").html() * ($(".utotal").html()/100.0) );
+    $(".dtotal").html(`${  $(".discount").html() * $(".utotal").html()/100.0  }` );
+    //console.log(` total = ${  $(".discount").html() * $(".utotal").html()/100.0  }`)
     $(".subtotal").html($(".utotal").html() - $(".dtotal").html());
     $(".tax").html($(".subtotal").html()*.10);
     $(".total").html(parseFloat($(".subtotal").html())+parseFloat($(".tax").html()));
     
 }
-
-console.log("go")
            $.ajax({
                 type: "GET",
                 url:  "api/GetRandomProduct.php",
@@ -35,7 +61,6 @@ console.log("go")
 
 
         $("#promoBox").on("change", function() {
-           console.log("hi");
             
            $.ajax({
                 type: "GET",
@@ -44,13 +69,12 @@ console.log("go")
                 data: { "promo": $("#promoBox").val() },  
                 
                 success: function(data,status) {
-                    $(".discount").html(data);
                   console.log(data);
-                  updatePrice();
+                  getDiscount(data);
                   
                 },
                 complete: function(data,status) { 
-                    //console.log(status);
+                    console.log(status);
                 }
              }); 
         });
