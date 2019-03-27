@@ -1,6 +1,26 @@
 /* global $ */
 $(document).ready( function() {
-
+    $(document).on('click', '.historylink', function(){
+        $('#purchaseHistoryModal').modal('show');
+        
+            $.ajax({
+            type: "GET",
+            url: "api/getProductHistory.php",
+            dataType: "json",
+            data: {
+                productId:$(this).attr("id")
+            },
+            success: function(data,status){
+                $("#history").html("")
+                $("#history").append(`${data[0]['productName']}<br />`)
+                $("#history").append("<img src='" + data[0]['productImage'] + "' width='200' /> <br />");
+            },
+            complete: function(data, status){
+                
+            }
+        })
+        
+    });
     
 
     
@@ -34,7 +54,6 @@ function search_for_stuff() {
             },
             success: function(data,status){
                 $("#results").html("<h3>Products found:</h3>");
-                console.log(data);
                 $("#results_table").html("<tr><th></th><th>name</th><th>description</th><th>price</th></tr>");
                 data.forEach(function(key) {
                     $("#results_table").append(

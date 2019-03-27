@@ -45,7 +45,7 @@
             <table id='results_table'></table>
         </div>
         
-        <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal" tabindex="-1" id="purchaseHistoryModal" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
