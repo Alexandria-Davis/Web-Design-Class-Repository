@@ -1,0 +1,46 @@
+.linkbarleft
+{
+    margin:0;
+    padding: .5em;
+}
+.linkbarright
+{
+    margin:0;
+    padding: .5em;
+}
+.header_row
+{
+    border-bottom:thin black solid;
+}
+.clearfix {
+    overflow:auto;
+}
+.clearfix::after
+{
+    clear:both;
+}
+.floated
+{
+    float: left;
+}
+#profile_pic
+{
+    width: 40%;
+    
+    padding-right:1em;
+}
+.centerme
+{
+    padding-left: auto;
+    padding-right: auto;
+    text-align: center;
+    align-content:center;
+}
+.head
+{
+    font-size: large;
+}
+.description_area
+{
+    padding:1em;
+}
