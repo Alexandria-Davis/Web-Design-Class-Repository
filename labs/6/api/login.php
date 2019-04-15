@@ -36,9 +36,10 @@
         $stmt->execute($args);
         $part = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
-        if (empty($part["userId"]))
+        if (empty($part))
         {
-          json_encode("{'login' = 'no'}");
+          echo json_encode("{'login' = 'no'}");
+          
           break;
         }
         $part["login"] = "yes";
