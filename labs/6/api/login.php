@@ -29,13 +29,21 @@
         $conn = getDatabaseConnection("ottermart");
         
         
-        $sql = "SELECT username, token FROM om_user left join `sessions` on om_user.userId = sessions.user_id where username = :usr and password = :pass";
+        $sql = "SELECT userId FROM om_user where username = :usr and password = :pass";
         //$np = array();
         //$np[':pId'] = $pid;
         $stmt = $conn->prepare($sql);
         $stmt->execute($args);
         $part = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
+        if (!empty($part["userId"]))
+        {
+          json_encode("{'login' = 'no'}");
+        }
+        $part["login"] = "yes";
+        
+        $_SESSION["token"] = $part["token"];
+        $_SESSION["user"] = $part["username"];
         
         $goal = json_encode($part);
         echo $goal;
