@@ -43,11 +43,11 @@
 
             function loss()
             {
-                document.getElementById("state").html = `<span class="loss">You have lost :(</span>`;
+                document.getElementById("state").innerHTML = `<span class="loss">You have lost :(</span>`;
             }
             function win()
             {
-                document.getElementById("state").html = `<span class="win">You have won :(</span>`;
+                document.getElementById("state").innerHTML = `<span class="win">You have won :(</span>`;
             }
 
             function into_wordboxes(length) {
@@ -92,11 +92,13 @@
                                     $("#misses").val()
                                 )+1
                             );
-                            $("#hangImg").attr("src",`img/stick_${$("#misses").val()}.png`)
-                            if ($("misses").val() == 6)
+                            if (parseInt($("misses").val()) > 5)
                             {
+                                console.log("loss")
                                 loss();
                             }
+                            $("#hangImg").attr("src",`img/stick_${$("#misses").val()}.png`)
+                            
                         }
                         for (var i = 0; i < newdata.length; i++)
                         {
