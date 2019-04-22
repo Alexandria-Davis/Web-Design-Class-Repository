@@ -1,0 +1,12 @@
+.imgzone
+{
+    display: flex;
+}
+.imgcol
+{
+    margin:2em;
+}
+.resulting_image
+{
+    width: 100%;
+}
