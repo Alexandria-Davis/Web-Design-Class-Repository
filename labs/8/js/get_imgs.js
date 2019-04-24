@@ -84,7 +84,7 @@ function get_liked(liked)
     console.log(liked)
             $.ajax({
             type: "GET",
-            url: "api/get_pix.php",
+            url: "api/check_favorited.php",
             dataType: "json",
             data: {
                 images: liked,

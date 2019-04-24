@@ -39,7 +39,7 @@
     
     function check_if_liked($images)
     {
-      $db = getDatabaseConnection($dbname = 'ottermart');
+      $db = getDatabaseConnection('favorites');
         $sql = "select image_id, keyword from favorited where image_id in (:array);";
         $query = $db.prepare($sql);
         
