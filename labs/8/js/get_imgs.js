@@ -1,4 +1,8 @@
 $(document).ready(function(){
+    $("#searchbutton").click(function(){
+        
+        console.log("searching");
+        
     /* global $ */
     var columns = [];
     columns.push(document.getElementById("col0"));
@@ -12,7 +16,7 @@ $(document).ready(function(){
             url: "api/get_pix.php",
             dataType: "json",
             data: {
-                query:"cat",
+                query:$("#search").val(),
             },
             success: function(data,status){
                 
@@ -42,7 +46,8 @@ $(document).ready(function(){
             complete: function(data, status){
                 
             }
-        })
+        });
+    });
 });
 
 function add_extras()

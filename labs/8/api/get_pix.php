@@ -49,13 +49,13 @@
         
         $key = "12231163-1e52dbaba5c2dea989e9f9eec";
         $search = "otter";
-        if(!empty($_GET["search"]))
+        if(!empty($_GET["query"]))
         {
-          $search = urlencode($_GET["search"]);
+          $search = urlencode($_GET["query"]);
         }
-        if(!empty($_POST["search"]))
+        if(!empty($_POST["query"]))
         {
-          $search = urlencode($_POST["search"]);
+          $search = urlencode($_POST["query"]);
         }
         
         

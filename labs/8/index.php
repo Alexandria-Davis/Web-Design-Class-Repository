@@ -8,6 +8,10 @@
 			  <link rel="stylesheet" href="css/css.css" type="text/css" />
     </head>
     <body>
+        <div class="searchbox">
+            <input type="text" id="search" name="search"/>
+            <button type="button" id="searchbutton">Search</button>
+        </div>
         <div class="imgzone">
             <div id="col0" class="imgcol"></div>
             <div id="col1" class="imgcol"></div>
