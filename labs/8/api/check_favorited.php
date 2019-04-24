@@ -14,12 +14,12 @@
       case "GET":
         // Allow any client to access
         header("Access-Control-Allow-Origin: *");
-            check_if_liked();
+            check_if_liked($_GET['images']);
         break;
       case 'POST':
         // Allow any client to access
         header("Access-Control-Allow-Origin: *");
-            check_if_liked();
+            check_if_liked($_POST['images']);
         break;
       case 'PUT':
         header("Access-Control-Allow-Origin: *");
@@ -30,10 +30,24 @@
         header("Access-Control-Allow-Origin: *");
         http_response_code(401);
         break;
-    }
+    };
     
-    function check_if_liked(images, user)
+    
+    include "dbConnection.php";
+    
+    
+    
+    function check_if_liked($images)
     {
+      $db = getDatabaseConnection($dbname = 'ottermart');
+        $sql = "select image_id, keyword from favorited where image_id in (:array);";
+        $query = $db.prepare($sql);
+        
+        $para["array"] = $images;
+        
+        $results = $query.execute($para);
+        
+        echo $query->fetchAll(PDO::FETCH_ASSOC);
         
     }
     

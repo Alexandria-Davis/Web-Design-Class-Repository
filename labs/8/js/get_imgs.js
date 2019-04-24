@@ -58,13 +58,13 @@ function add_extras()
         this.appendChild(buttonbox);
         
         var likebutton = document.createElement("img");
-        likebutton.setAttribute("src","img/favorite.png");
+        likebutton.setAttribute("src","/labs/8/img/favorite.png");
         likebutton.setAttribute("alt","like");
         likebutton.setAttribute("class","rate like");
         likebutton.setAttribute("id", `like_${this.id}`)
         
         var unlikebutton = document.createElement("img");
-        unlikebutton.setAttribute("src","img/favorite-on.png");
+        unlikebutton.setAttribute("src","/labs/8/img/favorite-on.png");
         unlikebutton.setAttribute("alt","unlike");
         unlikebutton.setAttribute("class", "rate unlike");
         unlikebutton.setAttribute("id", `unlike_${this.id}`)
@@ -82,4 +82,16 @@ function add_extras()
 function get_liked(liked)
 {
     console.log(liked)
+            $.ajax({
+            type: "GET",
+            url: "api/get_pix.php",
+            dataType: "json",
+            data: {
+                images: liked,
+            },
+            success: function(data, status)
+            {
+                console.log(data)
+            }
+            });
 }

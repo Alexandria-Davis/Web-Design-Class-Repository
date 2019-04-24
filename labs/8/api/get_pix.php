@@ -40,7 +40,9 @@
         foreach($pictures as $label => $value)
         {
             $result[$label] = $value;
+            
         }
+        
         echo json_encode($result);
     }
     function get_from_api() 
@@ -86,7 +88,9 @@
         {
             $data[$name] = $value;
         }
+        $data["query"]=$search;
         $data["fetched"] = true;
+        
         
         return $data;
     }
