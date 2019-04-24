@@ -14,12 +14,12 @@
       case "GET":
         // Allow any client to access
         header("Access-Control-Allow-Origin: *");
-            get_get_pix();
+            check_if_liked();
         break;
       case 'POST':
         // Allow any client to access
         header("Access-Control-Allow-Origin: *");
-
+            check_if_liked();
         break;
       case 'PUT':
         header("Access-Control-Allow-Origin: *");
@@ -31,6 +31,15 @@
         http_response_code(401);
         break;
     }
+    
+    function check_if_liked(images, user)
+    {
+        
+    }
+    
+    
+    
+    
     
     
     function get_get_pix()
@@ -49,19 +58,9 @@
         
         $key = "12231163-1e52dbaba5c2dea989e9f9eec";
         $search = "otter";
-        if(!empty($_GET["search"]))
-        {
-          $search = urlencode($_GET["search"]);
-        }
-        if(!empty($_POST["search"]))
-        {
-          $search = urlencode($_POST["search"]);
-        }
-        
-        
         //$search = $query
         $search = urlencode($search);
-        $curlurl = "https://pixabay.com/api/?key=${key}&q=${search}&per_page=9";
+        $curlurl = "https://pixabay.com/api/?key=${key}&q=${search}";
         
         
         curl_setopt($curl_sess, CURLOPT_URL, $curlurl);
@@ -95,14 +94,11 @@
         $images = get_from_api();
         foreach($images as $id=>$image)
         {
-            if (!empty($image["id"]))
-            {
+            
             $temp["url"] = $image["webformatURL"];
             $temp["id"] = "pix_".$image["id"];
             $returnable["images"][] = $temp;
-        
-            }
-          }
+        }
         
         $returnable;
         
