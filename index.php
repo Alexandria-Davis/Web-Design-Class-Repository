@@ -11,6 +11,13 @@
             </li>
             
         </ul>
+        <h2>In class labs</h2>
+        <ul>
+            <li>
+                <a href=/practice/p10/>Most Recent</a>
+            </li>
+        </ul>
+        
         <h2>Labs</h2>
         <ul>
             <li>

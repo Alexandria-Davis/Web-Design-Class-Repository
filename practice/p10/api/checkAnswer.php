@@ -2,7 +2,7 @@
     include 'dbConnection.php';
     $conn = getDatabaseConnection("Quiz");
     
-    $sql = "SELECT `email`, `score`, `taken` from quiz WHERE 1 and email=:email";
+    $sql = "SELECT `email`, `score`, `taken`+1 as taken from quiz WHERE 1 and email=:email";
     
     
     if (!empty($_GET['email'])){
@@ -14,6 +14,11 @@
     $stmnt->execute($namedParameters);
     $records = $stmnt->fetchAll(PDO::FETCH_ASSOC);
     //echo json_encode($namedParameters);
+    if (count($records) == 0)
+    {
+        $records[] = array(score=>"none", taken=>1);
+    }
+    
     echo json_encode($records);
     
         if (!empty($_GET['score'])){
