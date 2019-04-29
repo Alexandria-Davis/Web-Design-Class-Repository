@@ -10,7 +10,7 @@
        $namedParameters[":productName"] = "%{$_GET['product']}%";
     };
     
-    $stmnt = $conn->query();
+    $stmnt = $conn->prepare($sql);
     
     $stmnt->execute($namedParameters);
     $records = $stmnt->fetchAll(PDO::FETCH_ASSOC);

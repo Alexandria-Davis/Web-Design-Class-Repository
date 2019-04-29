@@ -1,0 +1,3 @@
+[2019-04-24 23:38:50] name.WARNING: Foo [] []
+[2019-04-24 23:38:50] name.ERROR: Bar [] []
+[2019-04-24 23:38:50] name.INFO: ELLO MATE [] []

@@ -1,5 +1,6 @@
 {
+    "php" : "^7.1",
     "require": {
-        "monolog/monolog" : "1.0.*"
+    "monolog/monolog" : "1.0.*"
     }
 }
