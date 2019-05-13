@@ -10,7 +10,7 @@
             $page = "login";
             include_once "Pagetools/nav.php"
         ?>
-        <div class="main d-flex align-items-center justify-content-center"">
+        <div class="main d-flex align-items-center justify-content-center">
             <div class="card">
                 <div class="card-body">
                     <div class="card-title">Log in</div>
@@ -26,8 +26,12 @@
                         </div>
                         <input type="password" name="password"/>
                     </div>
+                    <div>
+                        <button type="button" class="login">Log in</button>
+                    </div>
                 </div>
             </div>
         </div>
     </body>
 </html>
+<script type="text/javascript" src="js/logins.js"></script>

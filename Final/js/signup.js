@@ -1,10 +1,10 @@
 /*global $*/
 
 $(document).ready(function(){
-   $(".login").click(function () {
+   $(".signup").click(function () {
        $.ajax({
             type: "POST",
-            url: "api/login.php",
+            url: "api/signup.php",
             dataType: "json",
             data: {
                 username: $("[name=username]").val(),
@@ -14,7 +14,7 @@ $(document).ready(function(){
                 
             },
             complete: function(data, status){
-                window.location("dashbord.php")
+                window.location("login.php")
             }
         })
    }) ;

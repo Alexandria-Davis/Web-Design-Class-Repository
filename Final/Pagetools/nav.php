@@ -2,7 +2,8 @@
     $pages = [
         ["display"=>"home", "route"=>"home.php"],
         ["display"=>"login", "route"=>"login.php"],
-        ["display"=>"signup", "route"=>"signup.php"]
+        ["display"=>"signup", "route"=>"signup.php"],
+        ["display"=>"dashboard", "route"=>"dashboard.php"]
         ]
 ?>
 

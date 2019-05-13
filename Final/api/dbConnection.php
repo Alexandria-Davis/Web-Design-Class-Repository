@@ -4,7 +4,7 @@ class dbConn {
     var $host = "localhost";
     var $username='alexandriadavis';
     var $password = '';
-    var $dbname = 'ottermart';
+    var $dbname = 'final';
     
     function set()
     {
@@ -12,7 +12,7 @@ class dbConn {
         $host = "localhost";
         $username='alexandriadavis';
         $password = '';
-        $dbname = 'ottermart';
+        $dbname = 'final';
         
         
         if  (strpos($_SERVER['HTTP_HOST'], 'herokuapp') !== false) {
@@ -29,21 +29,24 @@ class dbConn {
     function connect()
     {
     $this->conn = new PDO("mysql:host={$this->host};dbname={$this->dbname}",$this->username,$this->password);
-    $this->conn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
     
     function login($username, $password)
     {
        
-        $sql = "SELECT * from om_user WHERE username = :username";
+        $sql = "SELECT user_id, password from users WHERE username = :username";
         $namedParameters["username"] = $username;
         $stmnt = $this->conn->prepare($sql);
         $stmnt->execute($namedParameters);
         $records = $stmnt->fetchAll(PDO::FETCH_ASSOC);
         $hash = $records[0]["password"];
         $isAuthenticated = password_verify($password, $hash);
-        return $isAuthenticated;
-            
+        if($isAuthenticated)
+        {
+            $_SESSION["user"] = $records[0]["user_id"];
+        }   
+        return $records[0]["user_id"];
     }
     function signup($username, $password)
     {
@@ -54,7 +57,7 @@ class dbConn {
         
         try
         {
-        $sql = "Insert into om_user (username, password) VALUES (:username, :password)";
+        $sql = "Insert into users (username, password) VALUES (:username, :password)";
         $namedParameters["username"] = $username;
         $namedParameters["password"] = $hashedPassword;
         $stmnt = $this->conn->prepare($sql);
@@ -77,7 +80,31 @@ class dbConn {
             }
         
         }
-    }   
+    }
+    function get_events()
+    {
+        $sql = "select `date`, `start`, `end`, `by`, `id` from `events` where `host` = :user ";
+        $namedParameters["user"] = $_SESSION['user'];
+        $stmnt = $this->conn->prepare($sql);
+        $stmnt->execute($namedParameters);
+        $records = $stmnt->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode($records);
+        
+    }
+    function add_event($start, $end, $date,$details)
+    {
+        $sql = "insert into `events` (`host`, `start`, `date`, `end`, `details`) values (:host, :start, :date, :end, :details);";
+        $namedParameters["host"] = $_SESSION['user'];
+        $namedParameters["start"] = $start;
+        $namedParameters["end"] = $end;
+        $namedParameters["date"] = $date;
+        $namedParameters["details"] = $details;
+        
+        $stmnt = $this->conn->prepare($sql);
+        $stmnt->execute($namedParameters);
+    }
 }
 
+        $conn = new dbConn;
+        $conn->connect();
 ?>

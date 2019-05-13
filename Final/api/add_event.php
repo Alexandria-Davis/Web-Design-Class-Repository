@@ -1,5 +1,11 @@
 <?php
-  session_start();
+session_start();
+    if (empty($_SESSION["user"]))
+    {
+    http_response_code(302);
+    echo "Please log in to access this";
+    exit();
+    }
 
     $httpMethod = strtoupper($_SERVER['REQUEST_METHOD']);
 
@@ -14,10 +20,8 @@
       case "GET":
         // Allow any client to access
         include "dbConnection.php";
-        session_start();
-        $success = $conn->login($_GET["username"],$_GET["password"]);
-        $_SESSION["started"] = true;
-        echo(json_encode($_SESSION));
+        $success = $conn->add_event($_GET["start"], $_GET["end"], $_GET["date"],$_GET["details"]);
+        echo(json_encode($success));
         return;
         
         //http_response_code(401);
@@ -28,10 +32,9 @@
         // Allow any client to access
         header("Access-Control-Allow-Origin: *");
         include "dbConnection.php";
-        session_start();
-        $success = $conn->login($_POST["username"],$_POST["password"]);
+        $success = $conn->add_event($_POST["start"], $_POST["end"], $_POST["date"],$_POST["details"]);
         $_SESSION["started"] = true;
-        echo(json_encode($_SESSION));
+        echo(json_encode($success));
         return;
         
         break;

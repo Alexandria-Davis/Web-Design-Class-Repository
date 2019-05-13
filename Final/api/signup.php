@@ -33,7 +33,7 @@
         include "dbConnection.php";
         session_start();
         $conn = new dbConn;
-        $conn->connect;
+        $conn->connect();
         $success = $conn->signup($_POST["username"],$_POST["password"]);
         $_SESSION["started"] = true;
         echo(json_encode($success));
