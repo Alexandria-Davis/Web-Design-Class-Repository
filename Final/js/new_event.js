@@ -12,7 +12,7 @@ $(document).ready(function() {
                 details:$("[name=details]").val(),
             },
             success: function(data,status){
-                window.location("dashboard.php")
+                window.location = "dashboard.php"
             },
             complete: function(data, status){
                 

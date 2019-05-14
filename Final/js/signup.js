@@ -14,7 +14,7 @@ $(document).ready(function(){
                 
             },
             complete: function(data, status){
-                window.location("login.php")
+                window.location = "login.php"
             }
         })
    }) ;
