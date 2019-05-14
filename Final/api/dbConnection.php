@@ -62,6 +62,7 @@ class dbConn {
         $namedParameters["password"] = $hashedPassword;
         $stmnt = $this->conn->prepare($sql);
         $stmnt->execute($namedParameters);
+        return array("status" => "success");
         }
         catch (PDOException $ex) {
             switch ($ex->getCode()) {
