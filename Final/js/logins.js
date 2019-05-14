@@ -14,7 +14,7 @@ $(document).ready(function(){
                 
             },
             complete: function(data, status){
-                window.location = "dashbord.php";
+                window.location = "dashboard.php";
             }
         })
    }) ;
