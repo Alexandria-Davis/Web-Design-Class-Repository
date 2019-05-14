@@ -16,12 +16,11 @@ class dbConn {
         
         
         if  (strpos($_SERVER['HTTP_HOST'], 'herokuapp') !== false) {
-        $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
         
-        $host = $url["host"];
-        $dbname = substr($url["path"], 1);
-        $username = $url["user"];
-        $password = $url["pass"];
+        $host = getenv("db_host");
+        $dbname = getenv("db_name");
+        $username = getenv("db_user");
+        $password = getenv("db_pass");
         }
     }
     
