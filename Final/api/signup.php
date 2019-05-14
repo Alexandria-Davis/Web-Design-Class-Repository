@@ -15,8 +15,6 @@
         // Allow any client to access
         include "dbConnection.php";
         session_start();
-        $conn = new dbConn;
-        $conn->connect();
         
         $success = $conn->signup($_GET["username"],$_GET["password"]);
         $_SESSION["started"] = true;
@@ -32,8 +30,6 @@
         header("Access-Control-Allow-Origin: *");
         include "dbConnection.php";
         session_start();
-        $conn = new dbConn;
-        $conn->connect();
         $success = $conn->signup($_POST["username"],$_POST["password"]);
         $_SESSION["started"] = true;
         echo(json_encode($success));

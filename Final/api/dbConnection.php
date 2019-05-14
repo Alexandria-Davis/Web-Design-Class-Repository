@@ -124,5 +124,6 @@ class dbConn {
 }
 
         $conn = new dbConn;
+        $conn->set();
         $conn->connect();
 ?>
