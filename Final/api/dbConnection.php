@@ -83,7 +83,7 @@ class dbConn {
     }
     function get_events()
     {
-        $sql = "select `date`, `start`, `end`, `by`, `id` from `events` where `host` = :user and `date` > NOW()";
+        $sql = "select `date`, `start`, `end`, `username`, `id` from `events` join users on `events`.`by` = `users`.`user_id` where `host` = :user and `date` > NOW()";
         $namedParameters["user"] = $_SESSION['user'];
         $stmnt = $this->conn->prepare($sql);
         $stmnt->execute($namedParameters);

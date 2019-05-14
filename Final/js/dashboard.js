@@ -24,7 +24,7 @@ $(document).ready(function () {
                     field.innerHTML = data[i]["end"];
                     row.appendChild(field);
                     var field = document.createElement('td');
-                    field.innerHTML = data[i]["by"];
+                    field.innerHTML = data[i]["username"];
                     row.appendChild(field);
                     var field = document.createElement('td');
                     field.innerHTML = `<button id="detail_${data[i]['id']}" type="button">details</button>`;
