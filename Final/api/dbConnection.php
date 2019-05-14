@@ -83,8 +83,18 @@ class dbConn {
     }
     function get_events()
     {
-        $sql = "select `date`, `start`, `end`, `by`, `id` from `events` where `host` = :user ";
+        $sql = "select `date`, `start`, `end`, `by`, `id` from `events` where `host` = :user and `date` > NOW()";
         $namedParameters["user"] = $_SESSION['user'];
+        $stmnt = $this->conn->prepare($sql);
+        $stmnt->execute($namedParameters);
+        $records = $stmnt->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode($records);
+        
+    }
+    function get_free($host)
+    {
+        $sql = "select `date`, `start`, `end`, `by`, `id` from `events` where `host` = :user and `by` IS NULL and `date` > NOW()";
+        $namedParameters["user"] = $host;
         $stmnt = $this->conn->prepare($sql);
         $stmnt->execute($namedParameters);
         $records = $stmnt->fetchAll(PDO::FETCH_ASSOC);
@@ -100,6 +110,13 @@ class dbConn {
         $namedParameters["date"] = $date;
         $namedParameters["details"] = $details;
         
+        $stmnt = $this->conn->prepare($sql);
+        $stmnt->execute($namedParameters);
+    }
+    function book($guest, $appointment){
+        $sql = "update events SET `by` = :user where id = :id";
+        $namedParameters["user"] = $guest;
+        $namedParameters["id"] = $appointment;
         $stmnt = $this->conn->prepare($sql);
         $stmnt->execute($namedParameters);
     }

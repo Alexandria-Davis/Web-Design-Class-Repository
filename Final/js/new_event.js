@@ -12,13 +12,10 @@ $(document).ready(function() {
                 details:$("[name=details]").val(),
             },
             success: function(data,status){
-                
+                window.location("dashboard.php")
             },
             complete: function(data, status){
-                for (var i = 0; i < data["results"].length; i++)
-                {
-                    window.location("dashboard.php")
-                }
+                
                 
             }
         })

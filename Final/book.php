@@ -2,16 +2,16 @@
 <html lang=en>
     <head>
     <?php
-    session_start();
-        include_once "Pagetools/head.php";
+        include_once "Pagetools/head.php"
     ?>
     </head>
     <body>
+        <input type="hidden" id="id" name="uid" value="<?php echo $_GET["user"]?>"/>
         <?php
             $page = "home";
-            include_once "Pagetools/nav.php";
+            include_once "Pagetools/nav.php"
         ?>
-        <input type=hidden id="uid" value=<?php echo $_SESSION["user"] ?>>
+        
         <div class="invite">
             <label for="Invintation_link">Invitation Link</label>
             <input type="text" class="linkbox" name="Invintation_link"/>
@@ -30,18 +30,15 @@
                     End time
                 </th>
                 <th>
-                    Booked by
-                </th>
-                <th>
                     Details
                 </th>
                 <th>
-                    
+                    Book
                 </th>
                 <th></th>
             </tr>
         </table>
         
     </body>
-    <script type="text/javascript" src="js/dashboard.js"></script>
+    <script type="text/javascript" src="js/book.js"></script>
 </html>

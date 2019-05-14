@@ -1,11 +1,15 @@
 /*global $*/
 $(document).ready(function () {
-    $.ajax({
+    function go () {
+        $.ajax({
             type: "GET",
-            url: "api/get_appointments.php",
+            url: "api/get_free.php",
             dataType: "json",
+            data: {
+                user: $("#id").val(),
+            },
             complete: function(data,status){
-                $(".linkbox").val(`${window.location.hostname}/Final/book.php?user=${$("#uid").val()}`)
+                
             },
             success: function(data, status){
                 console.log(data);
@@ -26,14 +30,54 @@ $(document).ready(function () {
                     var field = document.createElement('td');
                     field.innerHTML = data[i]["by"];
                     row.appendChild(field);
-                    var field = document.createElement('td');
                     field.innerHTML = `<button id="detail_${data[i]['id']}" type="button">details</button>`;
                     row.appendChild(field);
                     var field = document.createElement('td');
-                    field.innerHTML = `<button id="drop_${data[i]['id']}" type="button">remove</button>`;
+                    field.innerHTML = `<button class= "book" id="${data[i]['id']}" type="button">Book</button>`;
                     row.appendChild(field);
                 }
                 
             }
         })
+    }
+        go();
+        $('table').on('click', '.book', book);
+     function book () {
+        $.ajax({
+            type: "POST",
+            url: "api/book.php",
+            dataType: "json",
+            data: {
+                user: $("[name=uid]").val(),
+                appointment: this.id,
+            },
+            success: function(data,status){
+                
+            },
+            complete: function(data, status){
+                document.getElementById("event_table").innerHTML = `
+                <tr>
+                <th>date</th>
+                <th>
+                    Start time
+                </th>
+                <th>
+                    End time
+                </th>
+                <th>
+                    Details
+                </th>
+                <th>
+                    Book
+                </th>
+                <th></th>
+            </tr>
+                `
+                ;
+                go();
+            }
+        })
+        
+    }
+    
 })
